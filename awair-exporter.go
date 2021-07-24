@@ -163,7 +163,7 @@ func (e *awairExporter) Collect(ch chan<- prometheus.Metric) {
 		awairScore, prometheus.GaugeValue, air.Score, air.Hostname,
 	)
 	ch <- prometheus.MustNewConstMetric(
-		dewPoint, prometheus.GaugeValue, air.Score, air.Hostname,
+		dewPoint, prometheus.GaugeValue, air.DewPoint, air.Hostname,
 	)
 	ch <- prometheus.MustNewConstMetric(
 		temperature, prometheus.GaugeValue, air.Temperature, air.Hostname,
