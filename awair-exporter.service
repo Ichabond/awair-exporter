@@ -1,0 +1,15 @@
+[Unit]
+Description=Awair Local API Exporter
+After=network.target
+
+[Service]
+Type=simple
+User=tstrickx
+Group=www-data
+# Modify the next 2 lines to use absolute paths
+ExecStart=/usr/local/bin/awair-exporter -l ":9106" awair-elem-0053ff.local
+Restart=on-failure
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target
